@@ -1,4 +1,4 @@
-package com.tour.auth.dataSource;
+package com.tour.base.dataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,0 +1,57 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /auth
+
+spring:
+  application:
+    name: tour_auth
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+
+datasource:
+  #从库数量
+  readSize: 2
+  # 使用druid数据源
+  type: com.alibaba.druid.pool.DruidDataSource
+  #主库
+  write:
+    url: jdbc:mysql://127.0.0.1:3306/master?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: xxx
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQueryTimeout: 900000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  read:
+    url: jdbc:mysql://127.0.0.1:3306/slave?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: xxx
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQueryTimeout: 900000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20

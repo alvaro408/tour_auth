@@ -1,4 +1,4 @@
-package com.tour.auth.dataSource;
+package com.tour.base.dataSource;
 
 public class DynamicDataSourceHolder {
 

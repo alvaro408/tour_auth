@@ -1,4 +1,4 @@
-package com.tour.auth.dataSource;
+package com.tour.base.dataSource;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -14,15 +14,15 @@ public class DataSourceAOP {
 
     private static Logger logger = LoggerFactory.getLogger(DataSourceAOP.class);
 
-    @Before("@annotation(com.tour.base.config.dataSource.Read)")
+    @Before("@annotation(com.tour.base.dataSource.Read)")
     public void setReadDataSourceType() {
-        logger.info("[dataSource 切换到: Read]");
+        logger.info("[com.tour.base.dataSource 切换到: Read]");
         DynamicDataSourceHolder.change2Read();
     }
 
-    @Before("@annotation(com.tour.base.config.dataSource.Write)")
+    @Before("@annotation(com.tour.base.dataSource.Write)")
     public void setWriteDataSourceType() {
-        logger.info("[dataSource 切换到: Write]");
+        logger.info("[com.tour.base.dataSource 切换到: Write]");
         DynamicDataSourceHolder.change2Write();
     }
 
