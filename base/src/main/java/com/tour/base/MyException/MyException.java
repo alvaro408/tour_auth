@@ -18,7 +18,10 @@ public class MyException {
     @ExceptionHandler(value = Exception.class)
     public RespInfo defaultHandler(HttpServletRequest request, Exception e) {
         RespInfo respInfo = new RespInfo();
-        return null;
+        respInfo.setRspCode("-100");
+        respInfo.setRspDesc(e.getMessage());
+        respInfo.setUrl(request.getRequestURL().toString());
+        return respInfo;
     }
 
 }
