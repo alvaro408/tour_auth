@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: dev
+
+datasource:
+  write:
+    url: jdbc:mysql://127.0.0.1:3306/slave?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: xxx
+  read:
+    url: jdbc:mysql://127.0.0.1:3306/slave?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: xxx

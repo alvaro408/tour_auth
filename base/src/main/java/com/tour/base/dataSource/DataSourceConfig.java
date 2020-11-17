@@ -7,9 +7,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 配置2个数据源
@@ -26,7 +29,6 @@ public class DataSourceConfig {
      * 写库 配置
      * @return
      */
-    @Primary
     @Bean(name = "writeDataSource")
     @ConfigurationProperties(prefix = "datasource.write")
     public DataSource writeDataSource() {
@@ -43,6 +45,23 @@ public class DataSourceConfig {
     public DataSource readDataSource() {
         logger.info("[readDataSource init]");
         return DataSourceBuilder.create().type(dataSourceType).build();
+    }
+
+    @Bean(name = "multiDataSource")
+    @DependsOn({"writeDataSource", "readDataSource"})
+    @Primary
+    public DataSource getDataSource() {
+        DynamicDataSource dynamicDataSource = new DynamicDataSource();
+        dynamicDataSource.setDefaultTargetDataSource(writeDataSource());
+        dynamicDataSource.setTargetDataSources(targetDataSource());
+        return dynamicDataSource;
+    }
+
+    private Map<Object, Object> targetDataSource() {
+        Map<Object, Object> targetDataSources = new HashMap<>();
+        targetDataSources.put(DataSourceType.read.getType(), readDataSource());
+        targetDataSources.put(DataSourceType.write.getType(), writeDataSource());
+        return targetDataSources;
     }
 
 
