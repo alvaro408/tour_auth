@@ -18,9 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 @Aspect
 @Order(2)
-public class LogAOP {
+public class SysLogAOP {
 
-    private static Logger logger = LoggerFactory.getLogger(LogAOP.class);
+    private static Logger logger = LoggerFactory.getLogger(SysLogAOP.class);
 
     @Pointcut("execution(public * com.tour.*.web..*.*(..))")
     public void webLog(){}

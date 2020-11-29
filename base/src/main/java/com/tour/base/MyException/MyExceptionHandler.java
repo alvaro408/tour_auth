@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
-public class MyException {
+public class MyExceptionHandler {
 
-    private static Logger logger = LoggerFactory.getLogger(MyException.class);
+    private static Logger logger = LoggerFactory.getLogger(MyExceptionHandler.class);
 
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
     public RespInfo defaultHandler(HttpServletRequest request, Exception e) {
         RespInfo respInfo = new RespInfo();
         respInfo.setRspCode("-100");
-        respInfo.setRspDesc(e.getMessage());
+        respInfo.setRspDesc("系统错误");
+        logger.error("##### 异常: {} #####", e);
         respInfo.setUrl(request.getRequestURL().toString());
         return respInfo;
     }
