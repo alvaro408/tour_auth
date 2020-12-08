@@ -10,6 +10,7 @@
     <modules>
         <module>auth</module>
         <module>base</module>
+        <module>final</module>
     </modules>
     <packaging>pom</packaging>
 
