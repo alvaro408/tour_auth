@@ -1,6 +1,6 @@
-package com.tour.base.MyException;
+package com.tour.config.MyException;
 
-import com.tour.base.model.RespInfo;
+import com.tour.config.model.RespInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;

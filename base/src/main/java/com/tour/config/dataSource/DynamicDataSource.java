@@ -1,4 +1,4 @@
-package com.tour.base.dataSource;
+package com.tour.config.dataSource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 

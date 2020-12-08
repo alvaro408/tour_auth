@@ -1,6 +1,6 @@
-package com.tour.base.dataSource;
+package com.tour.config.dataSource;
 
-import com.tour.base.mybatis.MybatisConfig;
+import com.tour.config.mybatis.MybatisConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;

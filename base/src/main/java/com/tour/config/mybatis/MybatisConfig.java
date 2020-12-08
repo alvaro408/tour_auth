@@ -1,10 +1,11 @@
-package com.tour.base.mybatis;
+package com.tour.config.mybatis;
 
 import com.github.pagehelper.PageHelper;
-import com.tour.base.dataSource.DataSourceConfig;
+import com.tour.config.dataSource.DataSourceConfig;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,6 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @AutoConfigureAfter({DataSourceConfig.class})
+@MapperScan(basePackages = "com.tour.*.dao")
 public class MybatisConfig {
 
     private static Logger logger = LoggerFactory.getLogger(MybatisConfig.class);

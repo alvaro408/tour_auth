@@ -1,4 +1,4 @@
-package com.tour.base.log;
+package com.tour.config.log;
 
 import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.JoinPoint;

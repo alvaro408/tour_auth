@@ -1,4 +1,4 @@
-package com.tour.base.utils;
+package com.tour.config.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

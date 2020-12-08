@@ -6,6 +6,9 @@ server:
 spring:
   application:
     name: tour_auth
+  main:
+    allow-bean-definition-overriding: true
+
 eureka:
   client:
     service-url:

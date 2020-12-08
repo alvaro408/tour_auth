@@ -1,4 +1,4 @@
-package com.tour.base.model;
+package com.tour.config.model;
 
 import lombok.Data;
 

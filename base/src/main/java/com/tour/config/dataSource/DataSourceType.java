@@ -1,4 +1,4 @@
-package com.tour.base.dataSource;
+package com.tour.config.dataSource;
 
 public enum  DataSourceType {
     read("read", "从库"),

@@ -19,10 +19,10 @@ spring:
     #  mandatory: true
 datasource:
   write:
-    url: jdbc:mysql://127.0.0.1:3306/master?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/dbms?useUnicode=true&characterEncoding=utf8
     username: root
-    password: xxx
+    password: rootroot
   read:
-    url: jdbc:mysql://127.0.0.1:3306/slave?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/db_1?useUnicode=true&characterEncoding=utf8
     username: root
-    password: xxx
+    password: rootroot
