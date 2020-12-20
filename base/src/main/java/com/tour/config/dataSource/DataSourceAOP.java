@@ -16,12 +16,14 @@ public class DataSourceAOP {
 
     @Before("@annotation(com.tour.config.dataSource.Read)")
     public void setReadDataSourceType() {
+        //从spring容器当中取出read数据源来使用
         logger.info("[com.tour.base.dataSource 切换到: Read]");
         DynamicDataSourceHolder.change2Read();
     }
 
     @Before("@annotation(com.tour.config.dataSource.Write)")
     public void setWriteDataSourceType() {
+        //从Spring容器当中取出write数据源来使用
         logger.info("[com.tour.base.dataSource 切换到: Write]");
         DynamicDataSourceHolder.change2Write();
     }

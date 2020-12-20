@@ -11,4 +11,6 @@ public interface DemoDAO {
     @Select("select * from sys_users where id = #{id}")
     JSONObject getById(@Param("id") String id);
 
+    int insert();
+
 }
