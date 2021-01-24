@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/demo")
+@RequestMapping("/demo1")
 public class DemoController1 {
 
     @Autowired
@@ -22,6 +22,6 @@ public class DemoController1 {
 
     @RequestMapping(value = "/ok", method = RequestMethod.GET)
     public String test() {
-        return "ok";
+        return "ok1";
     }
 }
